@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>function cheker(){
+        let prime = true
+        let user_input = parseInt(document.getElementById("msg").value)
+        for (let i = 2; i < user_input - 1; i++)
+            if (user_input % i == 0) {
+                prime = false
+                break;
+            }
+        if (prime == true) {
+            alert(user_input + " is a prime")
+        }
+        else {
+            alert(user_input + " is not a prime number")
+        }
+    }
+    </script><center>
+    <h1>Check This Number Is Prime or Not</h1>
+    <hr color="gray">
+    <input type="text" id="msg"><button onclick="cheker()">Check</button></center>
+</body>
+
+</html>

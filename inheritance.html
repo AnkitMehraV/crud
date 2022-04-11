@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Employee(name, id, salary) {
+            this.name = name;
+            this.id = id;
+            this.salary = salary;
+        }
+        Employee.prototype.details = function() {
+            return console.log(this.name, this.id, this.salary)
+        }
+
+        function fullTimeEmployee(name, id, salary) {
+            Employee.call(this, name, id, salary)
+
+
+        }
+
+        function partTimeEmployee(name, id, salary) {
+            Employee.call(this, name, id, salary)
+        }
+
+        fullTimeEmployee.prototype = Object.create(Employee.prototype)
+        partTimeEmployee.prototype = Object.create(Employee.prototype)
+
+        let obj = new partTimeEmployee("anu", 1253, 600000)
+        let obj1 = new fullTimeEmployee("ankit", 455, 250000)
+        let obj2 = new fullTimeEmployee("praduman", 455, 250000)
+        let obj3 = new fullTimeEmployee("akash", 455, 250000)
+        let obj4 = new fullTimeEmployee("devansh", 455, 250000)
+        let obj6 = new fullTimeEmployee("", 455, 250000)
+
+        obj1.details()
+        obj.details()
+
+    </script>
+</body>
+
+</html>

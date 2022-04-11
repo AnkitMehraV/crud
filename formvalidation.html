@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <form onsubmit="return abc()">
+        <div>
+            <center>
+                <div>NAME: <input type="text" id="name"><span id="msg"></span></div>
+                <hr>
+                <div>CONTACT No: <input type="text" id="phone"><span id="msg1"></span></div>
+                <div>PASSWORD<input type="password" id="password1"><span id="msg2"></span></div>
+                <div>CONFIRM PASSWORD: <input type="password" id="password2"></div>
+                <div>EMAIL: <input type="text" id="email"><span id="msg3"></span></div>
+                <button onclick="abc()">Submit</button>
+            </center>
+        </div>
+    </form>
+    <script>
+        function abc() {
+            let name = document.getElementById("name").value
+            let phone = document.getElementById("phone").value
+            let password1 = document.getElementById("password1").value
+            let password2 = document.getElementById("password2").value
+            let email = document.getElementById("email").value
+
+
+            if (name == "" || 3 > name.length || name.length > 15 || name.type == "number") {
+                document.getElementById("msg").innerHTML = "invalid"
+                return false
+            }
+            if (phone == "" || 3 > phone.length || phone.length > 12 || phone.type == "string") {
+                document.getElementById("msg1").innerHTML = "invalid"
+                return false
+            }
+            if (password1 != password2 || password1 == "" || password2 == "") {
+                document.getElementById("msg2").innerHTML = "invalid"
+                return false
+
+            }
+            if (email == RegExp(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i)) {
+                document.getElementById("msg3").innerHTML = "invalid"
+                return false
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

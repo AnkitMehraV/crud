@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(gray, white, black);
+    }
+    
+    p {
+        border-radius: 60px;
+        color: blue;
+        margin-top: 10px;
+    }
+    
+    button {
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<body>
+    <center>
+        <h1 id="demo">wait a will</h1>
+        <button onclick="myStop()">Stop the time</button>
+    </center>
+    <script>
+        "use strict";
+        try {
+
+
+            let myInterval = setInterval(myTimer, 1000)
+
+            function myTimer() {
+                const date = new Date();
+                document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+            }
+
+            function myStop() {
+                clearInterval(myInterval);
+            }
+        } catch (err) {
+            document.getElementById("demo").innerHTML = err
+
+        }
+    </script>
+
+</body>
+
+</html>

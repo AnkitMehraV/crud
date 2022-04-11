@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function employee() {
+            this.name = "ankit"
+            this.id = 1232
+            this.sign_in = function() {
+                alert(`${this.name} want to sign in with id ${this.id}`)
+
+            }
+            this.sign_out = function() {
+                alert(`${this.name}you want to sign out`)
+
+            }
+
+
+        }
+
+
+        let ob1 = new employee()
+            // ob1.sign_in()
+
+        setInterval(ob1.sign_out(), 3000)
+    </script>
+</body>
+
+</html>
